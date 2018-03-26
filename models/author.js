@@ -14,7 +14,7 @@ var ApiData = connection.define("ApiData",{
     tags: Sequelize.BOOLEAN,
     free: Sequelize.BOOLEAN,
 });
+connection.sync();
 
-connection.sync({})
 
 // console.log("All Good")
