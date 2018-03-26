@@ -14,7 +14,12 @@ var ApiData = connection.define("ApiData",{
     tags: Sequelize.BOOLEAN,
     free: Sequelize.BOOLEAN,
 });
-connection.sync();
+
+ApiData.associate = function(models){
+    ApiData.hasMany(models.Post,{
+        
+    })
+}
 
 
 // console.log("All Good")
