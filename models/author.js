@@ -1,25 +1,17 @@
 
-var mysql = require('mysql');
-var Sequelize = require("sequelize");
-var config = require('../config/config.json');
+// var mysql = require('mysql');
 
-var connection = new Sequelize("metApi_db", "root", "",{
-    host: "localhost",
-    dialect: 'mysql',
-});
-
-var ApiData = connection.define("ApiData",{
-    name: Sequelize.STRING,
-    url: Sequelize.STRING,
-    tags: Sequelize.BOOLEAN,
-    free: Sequelize.BOOLEAN,
-});
-
-ApiData.associate = function(models){
-    ApiData.hasMany(models.Post,{
-        
-    })
-}
-
-
-// console.log("All Good")
+// var config = require('../config/config.json');
+var Sequelize = require('sequelize');
+module.exports = function(sequelize, DataTypes){
+    var Authors = sequelize.define("Authors",{
+        name: Sequelize.STRING,
+    });
+    
+    Authors.associate = function(models){
+        Authors.hasMany(models.Post,{
+        onDelete: "cascade"
+        })
+    }
+    return Authors;
+};
