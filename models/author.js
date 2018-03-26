@@ -1,26 +1,22 @@
 
 // var mysql = require('mysql');
+
 var Sequelize = require("sequelize");
 var config = require('../config/config.json');
 
 
+// var config = require('../config/config.json');
+var Sequelize = require('sequelize');
+module.exports = function(sequelize, DataTypes){
+    var Authors = sequelize.define("Authors",{
+        name: Sequelize.STRING,
+    });
+    
+    Authors.associate = function(models){
+        Authors.hasMany(models.Post,{
+        onDelete: "cascade"
+        })
+    }
+    return Authors;
+};
 
-
-
-
-
-
-// var ApiData = connection.define("ApiData",{
-//     name: Sequelize.STRING,
-//     url: Sequelize.STRING,
-//     tags: Sequelize.BOOLEAN,
-//     free: Sequelize.BOOLEAN,
-// });
-
-// ApiData.associate = function(models){
-//     ApiData.hasMany(models.Post,{
-//     })  
-// }
-
-
-// console.log("All Good")
