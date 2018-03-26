@@ -7,16 +7,30 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }
       },
-        tags: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            len: [1]
+      tags: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        validate:{
+          len: [1]
+        }   
       },
       free: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-        len: [1]
+        validate:{
+          len: [1]
+        } 
+      }
+    });
+    
+    Post.associate = function(models){
+      Post.belongsTo(models.Authors,{
+        foreignKey: {
+          allowNull: false
+        }
+      })
     }
-    },
-        
-)};
+    
+    return Post;
+  };
+
