@@ -1,11 +1,8 @@
-
-// var mysql = require('mysql');
-
-// var config = require('../config/config.json');
 var Sequelize = require('sequelize');
+
 module.exports = function(sequelize, DataTypes){
     var Authors = sequelize.define("Authors",{
-        name: Sequelize.STRING,
+        name: DataTypes.STRING,
     });
     
     Authors.associate = function(models){

@@ -12,6 +12,7 @@ if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
+  // console.log(sequelize);
 }
 
 fs
@@ -20,8 +21,12 @@ fs
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
   .forEach(file => {
+    console.log("file", file)
     var model = sequelize['import'](path.join(__dirname, file));
+    console.log("before it breaks")
     db[model.name] = model;
+    console.log("after it breaks")
+    console.log("model.name", db[model.name])
   });
 
 Object.keys(db).forEach(modelName => {
