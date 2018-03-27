@@ -19,6 +19,7 @@ $(document).ready(function() {
   });
 
   function signUpUser(email, password) {
+    console.log('post signup')
     $.post("/api/signup", {
       email: email,
       password: password
