@@ -2,8 +2,13 @@
     <div class="card m-3" style="width: 18rem">
         <img class="card-img-top" src="..." alt="API image">
         <div class="card-body">
-            <h5 class="card-title">{{name}}</h5>
-            <p class="card-text">{{tag}}</p>
+            <h5 class="card-title text-center">{{name}}</h5>
+            <p class="card-text text-center">{{tag}}</p>
+            {{#if free}}
+                <p class="card-text text-center text-white bg-success">Free</p>
+            {{else}}
+                <p class="card-text text-center text-white bg-danger">Paid</p>
+            {{/if}}
         </div>
     </div>
 </div>
