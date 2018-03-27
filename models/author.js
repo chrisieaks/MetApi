@@ -1,3 +1,10 @@
+
+
+var Sequelize = require("sequelize");
+var config = require('../config/config.json');
+
+
+
 var Sequelize = require('sequelize');
 
 module.exports = function(sequelize, DataTypes){
@@ -12,3 +19,4 @@ module.exports = function(sequelize, DataTypes){
     }
     return Authors;
 };
+

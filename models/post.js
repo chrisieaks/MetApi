@@ -47,5 +47,9 @@ module.exports = function(sequelize, DataTypes) {
     }
     console.log("after association")
     return Post;
-  };
 
+
+    })
+
+    return Post;
+};
