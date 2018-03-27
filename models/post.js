@@ -1,4 +1,4 @@
-var Sequelize = require('sequelize');
+// var Sequelize = require('sequelize');
 
 module.exports = function(sequelize, DataTypes) {
     console.log("inside of post")
@@ -24,18 +24,16 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }   
       },
-      // free: {
-      //   type: DataTypes.BOOLEAN,
-      //   allowNull: false,
-      //   validate:{
-      //     len: [1]
-      //   } 
-      // },
-      // clientServer: DataTypes.STRING,
-      // allowNull: false,
-      // validate: {
-      //   len: [1]
-      // }
+      free: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+      },
+      clientServer: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1]
+        }}
     });
     console.log("before association")
     Post.associate = function(models){
@@ -45,11 +43,8 @@ module.exports = function(sequelize, DataTypes) {
         }
       })
     }
-    console.log("after association")
+    console.log("after association");
     return Post;
-
-
-    })
 
     return Post;
 };
