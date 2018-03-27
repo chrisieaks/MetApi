@@ -1,5 +1,15 @@
+// var Sequelize = require('sequelize');
+
 module.exports = function(sequelize, DataTypes) {
+    console.log("inside of post")
     var Post = sequelize.define("Post", {
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
+      },
       url: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -8,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
         }
       },
       tags: {
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.STRING,
         allowNull: false,
         validate:{
           len: [1]
@@ -17,12 +27,15 @@ module.exports = function(sequelize, DataTypes) {
       free: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-        validate:{
+      },
+      clientServer: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
           len: [1]
-        } 
-      }
+        }}
     });
-    
+    console.log("before association")
     Post.associate = function(models){
       Post.belongsTo(models.Authors,{
         foreignKey: {
@@ -30,8 +43,8 @@ module.exports = function(sequelize, DataTypes) {
         }
       })
     }
-
-    })
+    console.log("after association");
+    return Post;
 
     return Post;
 };
