@@ -7,13 +7,19 @@ module.exports = function(app) {
     });
 
     app.get('/login', function(req, res){
+        console.log('my name jefff');
+        console.log('user: ', req.user);
         if(req.user) {
             res.redirect('/')
         }
-        res.render('signin');
+        else{
+            console.log('render login!!!')
+            res.render('login');
+        }
     }); 
     
     app.get('/signup', function(req, res){
         res.render('signup');
+        console.log('signup req');
     });
 };
