@@ -35,6 +35,10 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }}
     }, {timestamps: false});
+
+        }},
+    });
+
     console.log("before association")
     Post.associate = function(models){
       Post.belongsTo(models.Authors,{
