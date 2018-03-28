@@ -8,7 +8,7 @@ $(document).ready(function(){
             type: 'PUT',
             data: newApi
         }).then(function(){
-            console.log('devored changed to: ' + newDevoured);
+            console.log('Did it work');
             location.reload();
         });
     });
