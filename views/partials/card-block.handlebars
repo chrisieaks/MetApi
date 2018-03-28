@@ -1,14 +1,16 @@
 <div class="col-lg-4">
     <div class="card m-3" style="width: 18rem">
+        <div class="card-header text-center text-white bg-dark">{{name}}</div>
         <img class="card-img-top" src="..." alt="API image">
         <div class="card-body">
-            <h5 class="card-title text-center">{{name}}</h5>
-            <p class="card-text text-center">{{tag}}</p>
+            <p class="card-text text-center">{{url}}</p>
+            <p class="card-text text-center">Category: {{tag}}</p>
             {{#if free}}
                 <p class="card-text text-center text-white bg-success">Free</p>
             {{else}}
                 <p class="card-text text-center text-white bg-danger">Paid</p>
             {{/if}}
+            <p class="card-text text-center text-white bg-primary">{{clientServer}}</p>
         </div>
     </div>
 </div>
