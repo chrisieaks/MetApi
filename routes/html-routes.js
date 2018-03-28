@@ -1,9 +1,16 @@
-const path = require('path');
+
+const db = require('../models');
 
 module.exports = function(app) {
     app.get('/', function(req, res){
         //Build DB object here to render results
-        res.render('index');
+        db.Post.findAll({}).then(function(data) {
+          let  hbsObject = {
+            posts: data
+          };
+          console.log(hbsObject);
+          res.render('index', hbsObject);
+        }); 
     });
 
     app.get('/login', function(req, res){
