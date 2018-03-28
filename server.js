@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const session = require("express-session");
+const passport = require("./config/passport");
 const PORT = process.env.PORT || 8080;
 
 const app = express();
@@ -14,6 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');

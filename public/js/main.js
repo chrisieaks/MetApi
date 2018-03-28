@@ -1,31 +1,33 @@
-$(document).ready(function() {
-    // Getting references for the API input and API container. Also creating a table body for API list.
-    var apiInput = $("#apiInput");
-    var apiList = $("tbody");
-    var apiContainer = $(".api-container");
+$(document).ready(function(){
+    $('.change-api').on('click', function(event){
+        let id = $(this).data('id');
+        let newApi = $(this).data();
 
-    // Adding event listern to the form to search for a new API.
-    $(document).on("submit", "#api-form", handleApiSearchSubmit);
+        
+        $.ajax('/api/api/' + id, {
+            type: 'PUT',
+            data: newApi
+        }).then(function(){
+            console.log('Did it work');
+            location.reload();
+        });
+    });
 
-    // Our initial API array
-    var api = [];
-    
-    // Retrieves the initial list of APIs.
-    getApi();
+    $('.api-create').on('click', function(event){
+        event.preventDefault();
+        let newApi = {
+            name: $('#api-text').val().trim()
+        };
+        $.ajax('/api/api', {
+            type: 'POST',
+            data: newApi
+        }).then(function(){
+            console.log('Api added');
+            location.reload();
+        });
+    });
+});
 
-    // Function to reset the API displayed with new APIs from the database.
-    function initializeApi() {
-        apiContainer.empty();
-        var rowsToAdd = [];
-        for (var i = 0; i <api.length; i++) {
-            rowsToAdd.push(createNewRow(api[i]));
-        }
-        apiContainer.prepend(rowsToAdd);
-        }
-    // Function grabs API from the database and updates the view. 
-        function getApi() {
-            $.get("/api/api". function(data) {
-                api = data;
-                initializeRows();
-            });
-        }
+
+        // Route that grabs the information from the database and sends it in an ojbect file and handlebars runs the logic
+        // Look at cats or hamburgers

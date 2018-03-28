@@ -5,6 +5,7 @@ $(document).ready(function() {
 
   signUpForm.on("submit", function(event) {
     event.preventDefault();
+    console.log('we here');
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
@@ -14,17 +15,19 @@ $(document).ready(function() {
       return;
     }
     signUpUser(userData.email, userData.password);
-    emailInput.val("");
-    passwordInput.val("");
+    // emailInput.val("");
+    // passwordInput.val("");
   });
 
   function signUpUser(email, password) {
+    console.log('post signup')
     $.post("/api/signup", {
       email: email,
       password: password
     })
       .then(function(data) {
-        window.location.replace(data);
+        console.log(data);
+        window.location.href = '/login';
       })
       .catch(handleLoginErr);
   }
