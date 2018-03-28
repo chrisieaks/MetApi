@@ -1,4 +1,4 @@
-// var Sequelize = require('sequelize');
+  // var Sequelize = require('sequelize');
 
 module.exports = function(sequelize, DataTypes) {
     console.log("inside of post")
@@ -33,8 +33,8 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         validate: {
           len: [1]
-        }},
-    });
+        }}
+    }, {timestamps: false});
     console.log("before association")
     Post.associate = function(models){
       Post.belongsTo(models.Authors,{
