@@ -39,34 +39,34 @@ VALUES("Google Plus", "https://developers.google.com/+/web/api/rest/", "social",
 
 -- Tool API
 INSERT INTO Posts(name, url, tags, free, clientServer)
-VALUES("Google App Engine","https://developers.google.com/appengine/", "tool", true, "server");
+VALUES("Google App Engine","https://developers.google.com/appengine/", "tools", true, "server");
 
 INSERT INTO Posts(name, url, tags, free, clientServer)
-VALUES("Github","https://developer.github.com/v3/", "tool", true, "server");
+VALUES("Github","https://developer.github.com/v3/", "tools", true, "server");
 
 INSERT INTO Posts(name, url, tags, free, clientServer)
-VALUES("Google Fusion Tables","https://developers.google.com/fusiontables/", "tool", true, "server");
+VALUES("Google Fusion Tables","https://developers.google.com/fusiontables/", "tools", true, "server");
 
 INSERT INTO Posts(name, url, tags, free, clientServer)
-VALUES("uClassify","http://www.uclassify.com/", "tool", true, "server");
+VALUES("uClassify","http://www.uclassify.com/", "tools", true, "server");
 
 INSERT INTO Posts(name, url, tags, free, clientServer)
-VALUES("COLOURlovers","http://www.colourlovers.com/api", "tool", true, "server");
+VALUES("COLOURlovers","http://www.colourlovers.com/api", "tools", true, "server");
 
 INSERT INTO Posts(name, url, tags, free, clientServer)
-VALUES("Pryv","http://api.pryv.com/", "tool", true, "server");
+VALUES("Pryv","http://api.pryv.com/", "tools", true, "server");
 
 INSERT INTO Posts(name, url, tags, free, clientServer)
-VALUES("Zapier","https://zapier.com/developer/", "tool", true, "server");
+VALUES("Zapier","https://zapier.com/developer/", "tools", true, "server");
 
 INSERT INTO Posts(name, url, tags, free, clientServer)
-VALUES("Slack Web","https://api.slack.com/", "tool", true, "server");
+VALUES("Slack Web","https://api.slack.com/", "tools", true, "server");
 
 INSERT INTO Posts(name, url, tags, free, clientServer)
-VALUES("High Charts","http://api.highcharts.com/highcharts", "tool", true, "server");
+VALUES("High Charts","http://api.highcharts.com/highcharts", "tools", true, "server");
 
 INSERT INTO Posts(name, url, tags, free, clientServer)
-VALUES("JSON Tools","https://www.mashape.com/thefosk/Json-Tools", "tool", true, "server");
+VALUES("JSON Tools","https://www.mashape.com/thefosk/Json-Tools", "tools", true, "server");
 
 -- Data API
 INSERT INTO Posts(name, url, tags, free, clientServer)
