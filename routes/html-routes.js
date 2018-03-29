@@ -1,5 +1,6 @@
 
 const db = require('../models');
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
     app.get('/', function(req, res){
@@ -71,8 +72,10 @@ module.exports = function(app) {
         console.log('signup req');
     });
 
+
     app.get('/submit', function(req, res){
         res.render('submit');
         console.log('submit req');
     })
+
 };
