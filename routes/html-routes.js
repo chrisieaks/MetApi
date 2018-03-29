@@ -70,4 +70,9 @@ module.exports = function(app) {
         res.render('signup');
         console.log('signup req');
     });
+
+    app.get('/submit', function(req, res){
+        res.render('submit');
+        console.log('submit req');
+    })
 };
