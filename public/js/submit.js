@@ -18,6 +18,7 @@ $(document).ready(function() {
         };
 
         if (!userData.name || !userData.url || !userData.tags) {
+            cossole.log("error in return check");
             return;
         }
         submitApi(userData.name, userData.url, userData.tags, userData.free, userData.clientServer);
