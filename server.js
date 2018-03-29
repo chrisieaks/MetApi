@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require("express-session");
 const passport = require("./config/passport");
-const PORT = process.env.PORT || 8080;
+let PORT = process.env.PORT || 8080;
 
 const app = express();
 
