@@ -71,16 +71,11 @@ module.exports = function(app) {
         res.render('signup');
         console.log('signup req');
     });
-<<<<<<< HEAD
-    
-    app.get('/submit', isAuthenticated, function(req, res){
-        res.render('submit');
-    });
-=======
+
 
     app.get('/submit', function(req, res){
         res.render('submit');
         console.log('submit req');
     })
->>>>>>> f71a3d86e20d394aba9e2b0c7869fa1aa29bb98b
+
 };
