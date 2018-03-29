@@ -13,14 +13,55 @@ module.exports = function(app) {
         }); 
     });
 
+    app.get('/social', function(req, res){
+        db.Post.findAll({
+            where: {
+                tags: 'social'
+            }
+        }).then(function(data){
+            let hbsObject = {
+                posts: data
+            };
+            console.log(hbsObject);
+            res.render('index', hbsObject);
+        });
+    });
+
+    app.get('/tools', function(req, res){
+        db.Post.findAll({
+            where: {
+                tags: 'tools'
+            }
+        }).then(function(data){
+            let hbsObject = {
+                posts: data
+            };
+            console.log(hbsObject);
+            res.render('index', hbsObject);
+        });
+    });
+
+    app.get('/data', function(req, res){
+        db.Post.findAll({
+            where: {
+                tags: 'data'
+            }
+        }).then(function(data){
+            let hbsObject = {
+                posts: data
+            };
+            console.log(hbsObject);
+            res.render('index', hbsObject);
+        });
+    });
+
+
+
     app.get('/login', function(req, res){
-        console.log('my name jefff');
-        console.log('user: ', req.user);
         if(req.user) {
             res.redirect('/')
         }
         else{
-            console.log('render login!!!')
             res.render('login');
         }
     }); 
